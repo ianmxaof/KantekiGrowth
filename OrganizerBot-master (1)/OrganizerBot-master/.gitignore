@@ -1,0 +1,30 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyd
+
+# Logs and temp files
+*.log
+
+# Environments
+.venv/
+venv/
+.env
+*.env
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Media folders (generated during bot runtime)
+media/
+organized/
+*.webm
+
+# Telegram token - store in .env and ignore
+.env
+.qodo
