@@ -1,0 +1,37 @@
+[
+  {
+    "name": "auto_updater_agent",
+    "version": "1.0.0",
+    "description": "Auto-Updater Agent for launcher/agents.",
+    "download_url": "https://example.com/plugins/auto_updater_agent.py",
+    "sha256": "stubhash1"
+  },
+  {
+    "name": "log_prompt_sync_agent",
+    "version": "1.0.0",
+    "description": "Log/Prompt Sync Agent.",
+    "download_url": "https://example.com/plugins/log_prompt_sync_agent.py",
+    "sha256": "stubhash2"
+  },
+  {
+    "name": "agent_health_monitor",
+    "version": "1.0.0",
+    "description": "Agent Health Monitor.",
+    "download_url": "https://example.com/plugins/agent_health_monitor.py",
+    "sha256": "stubhash3"
+  },
+  {
+    "name": "crash_reporter_agent",
+    "version": "1.0.0",
+    "description": "Crash Reporter Agent.",
+    "download_url": "https://example.com/plugins/crash_reporter_agent.py",
+    "sha256": "stubhash4"
+  },
+  {
+    "name": "plugin_security_scanner",
+    "version": "1.0.0",
+    "description": "Plugin Security Scanner.",
+    "download_url": "https://example.com/plugins/plugin_security_scanner.py",
+    "sha256": "stubhash5"
+  }
+] 
