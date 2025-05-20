@@ -1,0 +1,62 @@
+# Python
+venv/
+venv311/
+venv39/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.egg-info/
+.DS_Store
+.env
+
+# Node
+node_modules/
+package-lock.json
+
+# System
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Project-specific
+logs/
+output/
+test_godsync_run/
+Darktide/
+GodSync/
+GodSync_backup/
+PowerCore-LandingPage/
+PowerCore-Swarm/
+PromptSelector/
+SupaBase/
+TemuSniper/
+Temu_Automator/
+Time4g00N/
+WebcamController/
+Webhooks/
+ZIPS/
+AOFVendor_bot/
+GreetingBot/
+Hybrid-Web-Extension-Dashboard/
+Lens/
+Log_Logger/
+OrganizerBot Labeler v0.1/
+OrganizerBot-master (1)/
+OrganizerGodMode/
+PrompSelector-master/
+errordb/
+gooning_scraper/
+goonsnatcher_extension/
+hustlefast_bot/
+icon_placeholders/
+instacart_farm_bot/
+modular bot framework/
+processors/
+project-template/
+prompt_market_bot/
+src/
+tests/
