@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+ENV/
+
+# dotenv
+.env
+.env.*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# VSCode/IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Node/npm (if any)
+node_modules/ 
