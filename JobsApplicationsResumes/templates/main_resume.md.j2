@@ -1,0 +1,23 @@
+# {{ name }}
+{{ contact }}
+
+## Summary
+{{ summary }}
+
+## Skills
+{% for skill in skills %}- {{ skill }}
+{% endfor %}
+
+## Experience
+{% for exp in main_experiences %}
+### {{ exp.title }} — {{ exp.company }}
+*{{ exp.start }} – {{ exp.end }}*
+{{ exp.description }}
+
+  {% if exp.side_projects %}
+  **Side Projects/Consulting:**
+  {% for side in exp.side_projects %}
+  - **{{ side.title }}** ({{ side.start }} – {{ side.end }}): {{ side.description }}
+  {% endfor %}
+  {% endif %}
+{% endfor %} 

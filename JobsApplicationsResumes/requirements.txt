@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pydantic
+jinja2
+pyyaml
+glob2
+spacy 

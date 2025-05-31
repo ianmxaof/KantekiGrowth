@@ -1,0 +1,53 @@
+Software Development Engineer- job post
+Adobe
+4.3
+4.3 out of 5 stars
+San Jose, CA 95110
+$153,600 - $286,600 a year - Full-time
+Profile insights
+Here’s how the job qualifications align with your profile.
+Skills
+
+Vue.js
+
+TypeScript
+
+React
++ show more
+
+Do you have experience in Vue.js?
+&nbsp;
+Job details
+Here’s how the job details align with your profile.
+Pay
+
+$153,600 - $286,600 a year
+Job type
+
+Full-time
+&nbsp;
+Full job description
+Our Company
+
+Changing the world through digital experiences is what Adobe’s all about. We give everyone—from emerging artists to global brands—everything they need to design and deliver exceptional digital experiences! We’re passionate about empowering people to create beautiful and powerful images, videos, and apps, and transform how companies interact with customers across every screen.
+
+We’re on a mission to hire the very best and are committed to creating exceptional employee experiences where everyone is respected and has access to equal opportunity. We realize that new ideas can come from everywhere in the organization, and we know the next big idea could be yours!
+
+We're crafting AI-powered developer tools that improve engineering efficiency and software quality, applying brand new generative AI to tackle intricate development obstacles. We're seeking a Senior Software Engineer to pioneer our AI tooling initiatives, exploring and implementing agentic solutions that transform how our engineering teams work. What you'll do:
+Explore and prototype AI-driven developer tools, with a focus on agentic solutions
+Identify engineering pain points and develop AI-powered solutions to address them
+Integrate with AI platforms (Claude, OpenAI, etc.) to create tools that streamline workflows
+Build and deploy production-ready systems that demonstrate measurable productivity improvements
+Collaborate with engineering teams to understand needs and gather feedback - Stay current with emerging AI capabilities and apply them to developer experience What you need to succeed:
+10+ years of software engineering experience, preferably with TypeScript or Python
+Skilled in at least one mainstream frontend framework, such as React, Vue, or Lit.
+Experience building developer tools or platforms that improve engineering workflows - Understanding of modern software development practices and pain points
+Familiarity with LLM capabilities and limitations
+Strong problem-solving skills and ability to work independently
+Excellent communication skills for sharing insights and innovations across teams
+Passion for exploring how AI can transform software development
+Our compensation reflects the cost of labor across several U.S. geographic markets, and we pay differently based on those defined markets. The U.S. pay range for this position is $153,600 -- $286,600 annually. Pay within this range varies by work location and may also depend on job-related knowledge, skills, and experience. Your recruiter can share more about the specific salary range for the job location during the hiring process.
+
+At Adobe, for sales roles starting salaries are expressed as total target compensation (TTC = base + commission), and short-term incentives are in the form of sales commission plans. Non-sales roles starting salaries are expressed as base salary and short-term incentives are in the form of the Annual Incentive Plan (AIP).
+
+In addition, certain roles may be eligible for long-term incentives in the form of a new hire equity award.

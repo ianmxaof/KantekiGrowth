@@ -1,0 +1,25 @@
+title: Senior Software Engineer, AI Developer Tools
+company: QuantumForge AI Solutions
+start: 2013-06
+end: 2024-05
+description: >
+  Spearheaded the design and implementation of AI-driven developer tools, focusing on agentic solutions that improved engineering efficiency and software quality across multiple product lines. Led a cross-functional team to integrate generative AI (OpenAI, Claude) into internal platforms, automating code review, documentation, and workflow optimization. Architected and deployed production-ready systems that delivered measurable productivity gains (up to 40% reduction in dev cycle time). Championed the adoption of modern frontend frameworks (React, TypeScript) for tool UIs, and mentored engineers on LLM capabilities, prompt engineering, and best practices. Regularly collaborated with engineering teams to identify pain points and deliver tailored AI-powered solutions. Presented innovations at industry conferences and contributed to open-source AI tooling projects.
+skills:
+  - Python
+  - TypeScript
+  - React
+  - Generative AI
+  - LLMs (OpenAI, Claude)
+  - Developer Tools
+  - System Architecture
+  - CI/CD
+  - Prompt Engineering
+  - Leadership
+  - Cross-functional Collaboration
+  - Workflow Automation
+  - Software Quality
+  - Frontend Development
+  - Mentoring
+  - Communication
+  - Problem Solving
+type: main 

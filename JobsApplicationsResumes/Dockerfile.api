@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+WORKDIR /app
+COPY . /app
+COPY Adobe.txt /app/Adobe.txt
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m spacy download en_core_web_sm
+EXPOSE 8000
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"] 

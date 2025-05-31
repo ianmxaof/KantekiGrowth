@@ -1,0 +1,11 @@
+title: AI Automation Consultant
+company: Freelance
+start: 2022-01
+end: 2023-06
+description: >
+  Built async agent mesh for distributed automation. Led system design, CI/CD, and agent health monitoring.
+skills:
+  - Python
+  - AsyncIO
+  - Distributed Systems
+type: side 

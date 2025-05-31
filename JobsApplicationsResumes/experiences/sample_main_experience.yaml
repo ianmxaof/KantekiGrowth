@@ -1,0 +1,11 @@
+title: Software Engineer
+company: Stealth Startup
+start: 2021-01
+end: 2023-12
+description: >
+  Led the development of a modular, agent-based automation platform. Architected distributed systems and implemented CI/CD pipelines for rapid deployment.
+skills:
+  - Python
+  - System Architecture
+  - CI/CD
+type: main 
