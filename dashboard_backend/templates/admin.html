@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - OrganizerBot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">OrganizerBot Admin</a>
+        <div class="d-flex">
+            <a href="/logout" class="btn btn-outline-light">Logout</a>
+            <a href="/apidocs" class="btn btn-outline-info ms-2">API Docs</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h2>Users</h2>
+    <form id="addUserForm" class="row g-3 mb-2">
+        <div class="col-auto"><input type="text" class="form-control" name="username" placeholder="Username" required></div>
+        <div class="col-auto"><input type="password" class="form-control" name="password" placeholder="Password" required></div>
+        <div class="col-auto"><select class="form-select" name="is_admin"><option value="0">User</option><option value="1">Admin</option></select></div>
+        <div class="col-auto"><button type="submit" class="btn btn-success">Add User</button></div>
+    </form>
+    <table class="table table-bordered">
+        <thead><tr><th>ID</th><th>Username</th><th>Admin</th><th>Action</th></tr></thead>
+        <tbody id="usersTable">
+        {% for u in users %}
+        <tr data-id="{{ u[0] }}"><td>{{ u[0] }}</td><td>{{ u[1] }}</td><td>{{ 'Yes' if u[2] else 'No' }}</td><td><button class="btn btn-danger btn-sm delete-user">Delete</button></td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h2>Agents</h2>
+    <form id="addAgentForm" class="row g-3 mb-2">
+        <div class="col-auto"><input type="text" class="form-control" name="name" placeholder="Agent Name" required></div>
+        <div class="col-auto"><input type="text" class="form-control" name="status" placeholder="Status" value="idle"></div>
+        <div class="col-auto"><button type="submit" class="btn btn-success">Add Agent</button></div>
+    </form>
+    <table class="table table-bordered">
+        <thead><tr><th>ID</th><th>Name</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="agentsTable">
+        {% for a in agents %}
+        <tr data-id="{{ a[0] }}"><td>{{ a[0] }}</td><td>{{ a[1] }}</td><td>{{ a[2] }}</td><td><button class="btn btn-danger btn-sm delete-agent">Delete</button></td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h2>Jobs</h2>
+    <form id="addJobForm" class="row g-3 mb-2">
+        <div class="col-auto"><input type="text" class="form-control" name="file" placeholder="File" required></div>
+        <div class="col-auto"><input type="text" class="form-control" name="status" placeholder="Status" value="pending"></div>
+        <div class="col-auto"><input type="text" class="form-control" name="result" placeholder="Result"></div>
+        <div class="col-auto"><button type="submit" class="btn btn-success">Add Job</button></div>
+    </form>
+    <table class="table table-bordered">
+        <thead><tr><th>ID</th><th>File</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="jobsTable">
+        {% for j in jobs %}
+        <tr data-id="{{ j[0] }}"><td>{{ j[0] }}</td><td>{{ j[1] }}</td><td>{{ j[2] }}</td><td><button class="btn btn-danger btn-sm delete-job">Delete</button></td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h2>Plugins</h2>
+    <form id="addPluginForm" class="row g-3 mb-2">
+        <div class="col-auto"><input type="text" class="form-control" name="name" placeholder="Plugin Name" required></div>
+        <div class="col-auto"><select class="form-select" name="enabled"><option value="1">Enabled</option><option value="0">Disabled</option></select></div>
+        <div class="col-auto"><button type="submit" class="btn btn-success">Add Plugin</button></div>
+    </form>
+    <table class="table table-bordered">
+        <thead><tr><th>ID</th><th>Name</th><th>Enabled</th><th>Action</th></tr></thead>
+        <tbody id="pluginsTable">
+        {% for p in plugins %}
+        <tr data-id="{{ p[0] }}"><td>{{ p[0] }}</td><td>{{ p[1] }}</td><td>{{ 'Yes' if p[2] else 'No' }}</td><td><button class="btn btn-danger btn-sm delete-plugin">Delete</button></td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+// --- SSE for instant toasts ---
+if (!!window.EventSource) {
+    var source = new EventSource('/api/stream');
+    source.onmessage = function(e) {
+        var toast = JSON.parse(e.data);
+        toastr[toast.type](toast.message);
+    };
+}
+// --- AJAX forms and delete buttons ---
+function reloadTables() {
+    $.get('/api/users', function(users) {
+        var rows = users.map(u => `<tr data-id="${u.id}"><td>${u.id}</td><td>${u.username}</td><td>${u.is_admin ? 'Yes' : 'No'}</td><td><button class='btn btn-danger btn-sm delete-user'>Delete</button></td></tr>`).join('');
+        $('#usersTable').html(rows);
+    });
+    $.get('/api/agents', function(agents) {
+        var rows = agents.map(a => `<tr data-id="${a.id}"><td>${a.id}</td><td>${a.name}</td><td>${a.status}</td><td><button class='btn btn-danger btn-sm delete-agent'>Delete</button></td></tr>`).join('');
+        $('#agentsTable').html(rows);
+    });
+    $.get('/api/jobs', function(jobs) {
+        var rows = jobs.map(j => `<tr data-id="${j.id}"><td>${j.id}</td><td>${j.file}</td><td>${j.status}</td><td><button class='btn btn-danger btn-sm delete-job'>Delete</button></td></tr>`).join('');
+        $('#jobsTable').html(rows);
+    });
+    $.get('/api/plugins', function(plugins) {
+        var rows = plugins.map(p => `<tr data-id="${p.id}"><td>${p.id}</td><td>${p.name}</td><td>${p.enabled ? 'Yes' : 'No'}</td><td><button class='btn btn-danger btn-sm delete-plugin'>Delete</button></td></tr>`).join('');
+        $('#pluginsTable').html(rows);
+    });
+}
+$('#addUserForm').submit(function(e) {
+    e.preventDefault();
+    $.ajax({url:'/api/users',type:'POST',contentType:'application/json',data:JSON.stringify({username:$(this).find('[name=username]').val(),password:$(this).find('[name=password]').val(),is_admin:$(this).find('[name=is_admin]').val()}),success:reloadTables});
+});
+$('#usersTable').on('click','.delete-user',function(){
+    var id=$(this).closest('tr').data('id');
+    $.ajax({url:'/api/users?id='+id,type:'DELETE',success:reloadTables});
+});
+$('#addAgentForm').submit(function(e) {
+    e.preventDefault();
+    $.ajax({url:'/api/agents',type:'POST',contentType:'application/json',data:JSON.stringify({name:$(this).find('[name=name]').val(),status:$(this).find('[name=status]').val()}),success:reloadTables});
+});
+$('#agentsTable').on('click','.delete-agent',function(){
+    var id=$(this).closest('tr').data('id');
+    $.ajax({url:'/api/agents?id='+id,type:'DELETE',success:reloadTables});
+});
+$('#addJobForm').submit(function(e) {
+    e.preventDefault();
+    $.ajax({url:'/api/jobs',type:'POST',contentType:'application/json',data:JSON.stringify({file:$(this).find('[name=file]').val(),status:$(this).find('[name=status]').val(),result:$(this).find('[name=result]').val()}),success:reloadTables});
+});
+$('#jobsTable').on('click','.delete-job',function(){
+    var id=$(this).closest('tr').data('id');
+    $.ajax({url:'/api/jobs?id='+id,type:'DELETE',success:reloadTables});
+});
+$('#addPluginForm').submit(function(e) {
+    e.preventDefault();
+    $.ajax({url:'/api/plugins',type:'POST',contentType:'application/json',data:JSON.stringify({name:$(this).find('[name=name]').val(),enabled:$(this).find('[name=enabled]').val()}),success:reloadTables});
+});
+$('#pluginsTable').on('click','.delete-plugin',function(){
+    var id=$(this).closest('tr').data('id');
+    $.ajax({url:'/api/plugins?id='+id,type:'DELETE',success:reloadTables});
+});
+</script>
+</body>
+</html> 
